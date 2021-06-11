@@ -1,4 +1,5 @@
 # Database and ETL Processes/Scripts
+- [BigQuery Schema](https://github.com/wplam107/nba_stuff/blob/main/db/nosql_schema.json)
 - Notebooks:
     - [Preparing Data for Database Loading](https://github.com/wplam107/nba_stuff/blob/main/db/etl_notebook.ipynb)
 
