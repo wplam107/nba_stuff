@@ -60,7 +60,7 @@
                 "mode": "REPEATED",
                 "fields": [
                     {
-                        "name": "event_num",
+                        "name": "shot_number",
                         "type": "INT64",
                         "mode": "REQUIRED"
                     },
