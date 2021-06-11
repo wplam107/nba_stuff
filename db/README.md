@@ -1,3 +1,3 @@
 # Database and ETL Processes/Scripts
 - Notebooks:
-    - Initial Database Schema, Cleaning, Transformation: (etl_notebook.ipynb)[]
+    - [Preparing Data for Database Loading](https://github.com/wplam107/nba_stuff/blob/main/db/etl_notebook.ipynb)
