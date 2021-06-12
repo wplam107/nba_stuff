@@ -1,5 +1,6 @@
 import re
-import dateutil.parser as dparser
+from dateutil import parser
+from datetime import datetime
 
 class Shot:
     def __init__(self, shot, shot_num):
@@ -90,7 +91,7 @@ class Shot:
 class Game:
     def __init__(self, game):
         self.game_id = game['Game_ID']
-        self.date = dparser.parse(game['GAME_DATE']).date()
+        self.date = datetime.strftime(parser.parse(game['GAME_DATE']), '%Y-%m-%d')
 
         if re.search(r'@', game['MATCHUP']):
             self.is_home = False

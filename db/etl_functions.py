@@ -1,8 +1,30 @@
-import json
+import ndjson
+from google.cloud import storage
 
-# Write to JSON file in readable format
+
 def to_json(data, file):
-    with open(file, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+    """
+    Write data to newline delimited JSON file
+    """
+
+    with open(file, 'w') as f:
+        ndjson.dump(data, f)
 
     print(f'{file} written')
+
+def upload_blob(bucket_name, source_file_name, destination_blob_name):
+    """
+    Uploads a file to the bucket
+    """
+
+    storage_client = storage.Client()
+    bucket = storage_client.bucket(bucket_name)
+    blob = bucket.blob(destination_blob_name)
+
+    blob.upload_from_filename(source_file_name)
+
+    print(
+        "File {} uploaded to {}.".format(
+            source_file_name, destination_blob_name
+        )
+    )
