@@ -1,6 +1,7 @@
 import ndjson
 from google.cloud import storage
-
+from configparser import ConfigParser
+from os import system
 
 def to_json(data, file):
     """
@@ -10,7 +11,7 @@ def to_json(data, file):
     with open(file, 'w') as f:
         ndjson.dump(data, f)
 
-    print(f'{file} written')
+    print(f'{file} written.')
 
 def upload_blob(bucket_name, source_file_name, destination_blob_name):
     """
@@ -28,3 +29,14 @@ def upload_blob(bucket_name, source_file_name, destination_blob_name):
             source_file_name, destination_blob_name
         )
     )
+
+def set_configs():
+    """
+    Sets configs for project
+    """
+
+    config = ConfigParser()
+    config.read('./private/config.ini')
+    BUCKET = config.get('gcp', 'BUCKET')
+
+    return BUCKET

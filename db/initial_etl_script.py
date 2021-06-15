@@ -46,6 +46,6 @@ if __name__ == '__main__':
         sleep(30)
 
 
-    file = './data/' + SEASON + '.json'
+    file = SEASON + '.json'
     to_json(team_objs, file)
     upload_blob(BUCKET, file, file)

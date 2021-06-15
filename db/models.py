@@ -151,3 +151,17 @@ class Team:
         yield 'city', self.city
         yield 'state', self.state
         yield 'games', self.games
+
+
+class Player:
+    def __init__(self, player):
+        self.id = player['id']
+        self.full_name = player['full_name']
+        self.first_name = player['first_name']
+        self.last_name = player['last_name']
+
+    def __iter__(self):
+        yield 'id', self.id
+        yield 'full_name', self.full_name
+        yield 'first_name', self.first_name
+        yield 'last_name', self.last_name
