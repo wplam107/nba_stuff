@@ -139,3 +139,6 @@ test.*
 
 # Data files
 data/
+
+# Obsolete file
+obsolete/
