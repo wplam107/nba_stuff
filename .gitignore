@@ -142,3 +142,6 @@ data/
 
 # Obsolete file
 obsolete/
+
+# Temp ignore
+db/
